@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+Responsive React Navbar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A lightweight, responsive React navbar component with smooth collapse animations, auto-height adjustment, and customizable links and social icons.
 
-## Available Scripts
+Features
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Responsive Design: Seamless mobile (< 768px) and desktop (≥ 768px) support
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Smooth Animations: 0.6s height/transform and 0.5s opacity transitions for collapse
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Auto-Height: Dynamically adjusts collapse height based on link count
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Social Icons: Hidden in mobile collapse, visible on desktop
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Centered Links: Middle-aligned with hover underline effect
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Customizable: Supports custom logo, links, and social icons
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+RTL Support: Built for right-to-left languages (e.g., Persian)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+No Bootstrap JS: Uses React state for collapse control
 
-### Deployment
+Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Install dependencies:
+
+npm install react react-dom react-bootstrap bootstrap react-icons
+
+
+
+Add Vazir font in public/index.html:
+
+<link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" />
+
+
+
+Import Bootstrap CSS in src/index.js:
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+Usage
+
+
+
+
+
+Place Navbar.jsx and index.css in src/components and src/styles.
+
+
+
+Configure DataHeader.js:
+
+import { FaTwitter, FaFacebook } from 'react-icons/fa';
+
+export const links = [
+  { id: 1, url: '#', text: 'Home' },
+  { id: 2, url: '#', text: 'About' },
+  { id: 3, url: '#', text: 'Services' },
+  { id: 4, url: '#', text: 'Contact' },
+];
+
+export const socials = [
+  { id: 1, url: '#', icon: <FaTwitter /> },
+  { id: 2, url: '#', icon: <FaFacebook /> },
+];
+
+
+
+Import and use <Navbar /> in your app.
+
+Files
+
+
+
+
+
+Navbar.jsx: Main component with collapse logic
+
+
+
+index.css: Styles for navbar, toggler, and animations
+
+
+
+DataHeader.js: Configuration for links and social icons
+
+
+
+logo/example logo.png: Placeholder logo
+
+Notes
+
+
+
+
+
+Requires Vazir font for Persian RTL support.
+
+
+
+Tested for smooth animations and no visual glitches (e.g., links flickering during collapse).
+
+
+
+Uses react-icons for toggler and social icons.
+
+License
+
+MIT
